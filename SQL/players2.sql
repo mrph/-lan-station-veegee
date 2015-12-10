@@ -106,7 +106,8 @@ CREATE TABLE client (
     warns          INTEGER,
     warnbans       INTEGER,
 	usewmp         INTEGER,
-	usenanoui      INTEGER 
+	usenanoui      INTEGER,
+    progress_bars  TEXT 
 );
 
 
