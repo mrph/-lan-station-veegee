@@ -66,7 +66,7 @@
 
 			bloodDNA = null
 
-			// Floorlength braids?  Enjoy your tripping.
+		/*	// Floorlength braids?  Enjoy your tripping.
 			if(H.h_style && !H.check_hidden_head_flags(HIDEHEADHAIR))
 				var/datum/sprite_accessory/hair_style = hair_styles_list[H.h_style]
 				if(hair_style && (hair_style.flags & HAIRSTYLE_CANTRIP))
@@ -77,7 +77,7 @@
 						playsound(get_turf(src), 'sound/misc/slip.ogg', 50, 1, -3)
 						H.Stun(4)
 						H.Weaken(5)
-
+		*/
 		//Anything beyond that point will not fire if the mob isn't physically walking here
 		if(!M.walking()) //Checks lying, flying and locked.to
 			return ..()
