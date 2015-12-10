@@ -20,7 +20,7 @@ var/global/datum/controller/occupations/job_master
 		to_chat(world, "<span class='danger'>Error setting up jobs, no job datums found</span>")
 		return 0
 	for(var/J in all_jobs)
-		var/datum/job/job = new J()
+		var/datum/job/job = 		new J()
 		if(!job)					continue
 		if(!job.config_check())		continue
 		if(job.faction != faction)	continue

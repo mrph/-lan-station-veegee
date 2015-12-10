@@ -76,5 +76,5 @@
 
 	return max(0, minimal_player_age - C.player_age)
 
-/datum/job/proc/config_check // If false, the jobs'd done man, job's done.
+/datum/job/proc/config_check() // If false, job's over, man, job's over.
 	return 1
