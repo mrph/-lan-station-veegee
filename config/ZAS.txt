@@ -36,7 +36,7 @@
 
 # Aiflow Stunning - Cooldown
 #   How long, in tenths of a second, to wait before stunning them again.
-/datum/ZAS_Setting/airflow_stun_cooldown 60
+/datum/ZAS_Setting/airflow_stun_cooldown 30
 
 # Airflow Impact - Stunning
 #   How much a mob is stunned when hit by an object.
@@ -60,7 +60,7 @@
 
 # Airflow - Push
 #   1=yes please rape my server, 0=no
-/datum/ZAS_Setting/airflow_push 0
+/datum/ZAS_Setting/airflow_push 1
 
 # Connections - Insulation
 #   How insulative a connection is, in terms of heat transfer.  1 is perfectly insulative, and 0 is perfectly conductive.

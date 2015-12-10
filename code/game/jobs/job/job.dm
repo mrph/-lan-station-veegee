@@ -75,3 +75,6 @@
 		return 0
 
 	return max(0, minimal_player_age - C.player_age)
+
+/datum/job/proc/config_check // If false, the jobs'd done man, job's done.
+	return 1

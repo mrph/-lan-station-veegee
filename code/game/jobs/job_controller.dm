@@ -21,7 +21,8 @@ var/global/datum/controller/occupations/job_master
 		return 0
 	for(var/J in all_jobs)
 		var/datum/job/job = new J()
-		if(!job)	continue
+		if(!job)					continue
+		if(!job.config_check())		continue
 		if(job.faction != faction)	continue
 		occupations += job
 

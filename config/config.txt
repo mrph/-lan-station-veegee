@@ -68,7 +68,7 @@ LOG_PDA
 ##LOG_ADMINWARN  ## Also duplicates a bunch of other messages.
 
 ## log world.log and runtime errors to a file
-# LOG_RUNTIMES
+LOG_RUNTIMES
 
 ## sql switching
 # SQL_ENABLED
@@ -84,16 +84,16 @@ LOG_PDA
 PROBABILITY EXTENDED 0
 PROBABILITY TRAITOR 2
 PROBABILITY METEOR 0
-PROBABILITY MALFUNCTION 2
-PROBABILITY BLOB 2
-PROBABILITY NUCLEAR 0
+PROBABILITY MALFUNCTION 1
+PROBABILITY BLOB 1
+PROBABILITY NUCLEAR 1
 PROBABILITY SANDBOX 0
-PROBABILITY WIZARD 0
+PROBABILITY WIZARD 1
 PROBABILITY RESTRUCTURING 0
-PROBABILITY REVOLUTION 5
-PROBABILITY CHANGELING 0
+PROBABILITY REVOLUTION 1
+PROBABILITY CHANGELING 1
 PROBABILITY CULT 1
-PROBABILITY MONKEY 0
+PROBABILITY MONKEY 1
 PROBABILITY TRAITORCHAN 0
 PROBABILITY EXTEND-A-TRAITORMONGOUS 0
 PROBABILITY EPIDEMIC 1
@@ -109,7 +109,7 @@ ALLOW_RANDOM_EVENTS
 TRAITOR_SCALING
 
 ## If security is prohibited from being most antagonists
-#PROTECT_ROLES_FROM_ANTAGONIST
+PROTECT_ROLES_FROM_ANTAGONIST
 
 ## Comment this out to stop admins being able to choose their personal ooccolor
 ALLOW_ADMIN_OOCCOLOR
@@ -146,7 +146,7 @@ ALLOW_AI
 # DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Yournamehere
+HOSTEDBY /lan/station
 
 ## Set to jobban "Guest-" accounts from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
 ## Set to 1 to jobban them from those positions, set to 0 to allow them.
@@ -187,7 +187,7 @@ GUEST_BAN
 ## Remove the # to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.9
+TICKLAG 0.16
 
 ## Defines if Tick Compensation is used.  It results in a minor slowdown of movement of all mobs, but attempts to result in a level movement speed across all ticks.  Recommended if tickrate is lowered.
 TICKCOMP 0
