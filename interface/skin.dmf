@@ -571,7 +571,7 @@ menu "menu"
 window "Telecomms IDE"
 	elem "Telecomms IDE"
 		type = MAIN
-		pos = 281,0
+		pos = 216,0
 		size = 569x582
 		anchor1 = none
 		anchor2 = none
@@ -802,7 +802,7 @@ window "Telecomms IDE"
 window "chemdispenser"
 	elem "chemdispenser"
 		type = MAIN
-		pos = 281,0
+		pos = 216,0
 		size = 625x412
 		anchor1 = none
 		anchor2 = none
@@ -1279,7 +1279,7 @@ window "mainwindow"
 window "mapwindow"
 	elem "mapwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 216,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -1414,8 +1414,8 @@ window "outputwindow"
 window "rpane"
 	elem "rpane"
 		type = MAIN
-		pos = 281,0
-		size = 640x480
+		pos = 216,0
+		size = 641x480
 		anchor1 = none
 		anchor2 = none
 		font-family = ""
@@ -1453,7 +1453,7 @@ window "rpane"
 		on-close = ""
 	elem "round_end"
 		type = BUTTON
-		pos = 640,0
+		pos = 148,0
 		size = 224x32
 		anchor1 = none
 		anchor2 = none
@@ -1482,7 +1482,7 @@ window "rpane"
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 640x480
+		size = 641x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = ""
@@ -1505,90 +1505,6 @@ window "rpane"
 		splitter = 50
 		show-splitter = true
 		lock = none
-	elem "github"
-		type = BUTTON
-		pos = 455,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "BugReport"
-		image = ""
-		command = "Github-Report"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = ""
-		button-type = pushbutton
-	elem "special_button"
-		type = BUTTON
-		pos = 518,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Special"
-		image = ""
-		command = ".winset \"rpanewindow.left=window1\""
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbox
-	elem "map"
-		type = BUTTON
-		pos = 386,0
-		size = 67x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "MapName"
-		image = ""
-		command = "MapRender"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = ""
-		button-type = pushbutton
 	elem "hosttracker"
 		type = BROWSER
 		pos = 392,25
@@ -1615,37 +1531,9 @@ window "rpane"
 		use-title = false
 		on-show = ""
 		on-hide = ""
-	elem "rulesb"
-		type = BUTTON
-		pos = 253,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Rules"
-		image = ""
-		command = "rules"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbutton
 	elem "changelog"
 		type = BUTTON
-		pos = 316,0
+		pos = 128,0
 		size = 67x16
 		anchor1 = none
 		anchor2 = none
@@ -1666,62 +1554,6 @@ window "rpane"
 		text = "Changelog"
 		image = ""
 		command = "Changelog"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbutton
-	elem "forumb"
-		type = BUTTON
-		pos = 190,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Forum"
-		image = ""
-		command = "forum"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbutton
-	elem "wikib"
-		type = BUTTON
-		pos = 127,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Wiki"
-		image = ""
-		command = "wiki"
 		is-flat = false
 		stretch = false
 		is-checked = false
@@ -1753,34 +1585,6 @@ window "rpane"
 		is-flat = false
 		stretch = false
 		is-checked = true
-		group = "rpanemode"
-		button-type = pushbox
-	elem "browseb"
-		type = BUTTON
-		pos = 580,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = false
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Browser"
-		image = ""
-		command = ".winset \"rpanewindow.left=browserwindow\""
-		is-flat = false
-		stretch = false
-		is-checked = false
 		group = "rpanemode"
 		button-type = pushbox
 	elem "infob"
@@ -1815,7 +1619,7 @@ window "rpane"
 window "browserwindow"
 	elem "browserwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 216,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -1882,7 +1686,7 @@ window "browserwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 281,0
+		pos = 216,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
