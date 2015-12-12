@@ -70,10 +70,6 @@
 
 /datum/job/warden/config_check()
 	return 0
-
-/datum/job/cyborg/config_check()
-	return 0
-
 ///
 // Ajusta jobs existentes para serem usados na /lan/station
 ///
@@ -142,14 +138,7 @@
 
 // Security
 
-/datum/job/detective/New()
-	..()
-	access = list(access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_court, access_engine)
-	minimal_access = list(access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels, access_court)
-
 /datum/job/officer/New()
 	..()
 	total_positions = 3
 	spawn_positions = 3
-	access = list(access_security, access_sec_doors, access_brig, access_court)
-	minimal_access = list(access_security, access_sec_doors, access_brig, access_court)
