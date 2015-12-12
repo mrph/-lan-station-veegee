@@ -60,7 +60,6 @@ var/savefile/Banlist
 
 /proc/LoadBans()
 
-
 	Banlist = new("data/banlist.bdb")
 	log_admin("Loading Banlist")
 
@@ -96,7 +95,6 @@ var/savefile/Banlist
 
 /proc/AddBan(ckey, computerid, reason, bannedby, temp, minutes, address)
 
-
 	var/bantimestamp
 
 	if (temp)
@@ -105,19 +103,20 @@ var/savefile/Banlist
 
 	Banlist.cd = "/base"
 	if ( Banlist.dir.Find("[ckey][computerid]") )
-		to_chat(usr, text("<span class='warning'>Ban already exists.</span>"))
+		usr << text("\red Ban already exists.")
 		return 0
 	else
 		Banlist.dir.Add("[ckey][computerid]")
 		Banlist.cd = "/base/[ckey][computerid]"
-		to_chat(Banlist["key"], ckey)
-		to_chat(Banlist["id"], computerid)
-		to_chat(Banlist["ip"], address)
-		to_chat(Banlist["reason"], reason)
-		to_chat(Banlist["bannedby"], bannedby)
-		to_chat(Banlist["temp"], temp)
+		Banlist["key"] << ckey
+		Banlist["id"] << computerid
+		Banlist["ip"] << address
+		Banlist["reason"] << reason
+		Banlist["bannedby"] << bannedby
+		Banlist["temp"] << temp
 		if (temp)
-			to_chat(Banlist["minutes"], bantimestamp)
+			Banlist["minutes"] << bantimestamp
+		notes_add(ckey, "Banned for [minutes] minutes - [reason]")
 	return 1
 
 /proc/RemoveBan(foldername)
@@ -135,8 +134,8 @@ var/savefile/Banlist
 		log_admin("Ban Expired: [key]")
 		message_admins("Ban Expired: [key]")
 	else
-		ban_unban_log_save("[key_name_admin(usr)] unbanned [key]")
-		log_admin("[key_name_admin(usr)] unbanned [key]")
+		ban_unban_log_save("[key_name(usr)] unbanned [key]")
+		log_admin("[key_name(usr)] unbanned [key]")
 		message_admins("[key_name_admin(usr)] unbanned: [key]")
 		feedback_inc("ban_unban",1)
 		usr.client.holder.DB_ban_unban( ckey(key), BANTYPE_ANY_FULLBAN)
@@ -167,7 +166,7 @@ var/savefile/Banlist
 /datum/admins/proc/unbanpanel()
 	var/count = 0
 	var/dat
-	//var/dat = "<HR><B>Unban Player:</B> <span class='warning'>(U) = Unban , (E) = Edit Ban<span class='good'>(Total<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 ></span></span>"
+	//var/dat = "<HR><B>Unban Player:</B> \blue(U) = Unban , (E) = Edit Ban\green (Total<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >"
 	Banlist.cd = "/base"
 	for (var/A in Banlist.dir)
 		count++
@@ -186,18 +185,13 @@ var/savefile/Banlist
 
 		dat += text("<tr><td><A href='?src=[ref];unbanf=[key][id]'>(U)</A><A href='?src=[ref];unbane=[key][id]'>(E)</A> Key: <B>[key]</B></td><td>ComputerID: <B>[id]</B></td><td>IP: <B>[ip]</B></td><td> [expiry]</td><td>(By: [by])</td><td>(Reason: [reason])</td></tr>")
 
-
-	// AUTOFIXED BY fix_string_idiocy.py
-	// C:\Users\Rob\\documents\\\projects\vgstation13\code\\modules\admin\NewBan.dm:187: dat += "</table>"
-	dat += {"</table>
-		<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , (E) = Edit Ban</FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"}
-	// END AUTOFIX
+	dat += "</table>"
+	dat = "<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , (E) = Edit Ban</FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
 	usr << browse(dat, "window=unbanp;size=875x400")
 
 //////////////////////////////////// DEBUG ////////////////////////////////////
 
 /proc/CreateBans()
-
 
 	UpdateTime()
 
@@ -211,17 +205,17 @@ var/savefile/Banlist
 			Banlist.cd = "/base"
 			Banlist.dir.Add("trash[i]trashid[i]")
 			Banlist.cd = "/base/trash[i]trashid[i]"
-			to_chat(Banlist["key"], "trash[i]")
+			Banlist["key"] << "trash[i]"
 		else
 			Banlist.cd = "/base"
 			Banlist.dir.Add("[last]trashid[i]")
 			Banlist.cd = "/base/[last]trashid[i]"
-			to_chat(Banlist["key"], last)
-		to_chat(Banlist["id"], "trashid[i]")
-		to_chat(Banlist["reason"], "Trashban[i].")
-		to_chat(Banlist["temp"], a)
-		to_chat(Banlist["minutes"], CMinutes + rand(1,2000))
-		to_chat(Banlist["bannedby"], "trashmin")
+			Banlist["key"] << last
+		Banlist["id"] << "trashid[i]"
+		Banlist["reason"] << "Trashban[i]."
+		Banlist["temp"] << a
+		Banlist["minutes"] << CMinutes + rand(1,2000)
+		Banlist["bannedby"] << "trashmin"
 		last = "trash[i]"
 
 	Banlist.cd = "/base"
@@ -230,3 +224,4 @@ var/savefile/Banlist
 	Banlist.cd = "/base"
 	for (var/A in Banlist.dir)
 		RemoveBan(A)
+
